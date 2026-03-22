@@ -38,6 +38,7 @@ export interface MistakeEntry {
   createdAt: number;
   nextReattemptAt: number;
   attemptCount: number;
+  isMastered?: boolean;
   aiAnalysis: AIAnalysisResult;
   similarQuestionsPracticed?: boolean[];
   similarQuestionsResults?: ("correct" | "incorrect" | null)[];

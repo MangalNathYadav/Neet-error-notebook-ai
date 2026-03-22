@@ -53,7 +53,7 @@ export default function DashboardPage() {
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-neutral-500"
+          className="text-neutral-600 dark:text-neutral-500"
         >
           Welcome back,
         </motion.p>
@@ -61,7 +61,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-3xl font-bold text-white mt-1"
+          className="text-3xl font-bold text-neutral-900 dark:text-white mt-1"
         >
           {user?.displayName || 'Student'}
         </motion.h1>
@@ -96,17 +96,17 @@ export default function DashboardPage() {
 
       <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Placeholder for Weak Chapters */}
-        <div className="rounded-3xl border border-white/5 bg-white/5 p-8 backdrop-blur-xl">
-          <h2 className="text-xl font-bold flex items-center gap-3 mb-6">
-            <TrendingUp size={20} className="text-purple-400" />
+        <div className="rounded-3xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-white/5 shadow-sm dark:shadow-none p-8 backdrop-blur-xl">
+          <h2 className="text-xl font-bold flex items-center gap-3 mb-6 text-neutral-900 dark:text-white">
+            <TrendingUp size={20} className="text-purple-500 dark:text-purple-400" />
             Weak Chapters
           </h2>
           <div className="space-y-4">
             {stats?.weakChapters?.length > 0 ? (
               stats.weakChapters.map((ch: any) => (
-                <div key={ch.chapter} className="flex items-center justify-between p-4 rounded-2xl bg-white/5">
-                  <span className="text-neutral-300">{ch.chapter}</span>
-                  <span className="font-bold text-purple-400">{ch.count} errors</span>
+                <div key={ch.chapter} className="flex items-center justify-between p-4 rounded-2xl bg-neutral-50 dark:bg-white/5">
+                  <span className="text-neutral-700 dark:text-neutral-300">{ch.chapter}</span>
+                  <span className="font-bold text-purple-600 dark:text-purple-400">{ch.count} errors</span>
                 </div>
               ))
             ) : (
@@ -116,12 +116,12 @@ export default function DashboardPage() {
         </div>
 
         {/* Placeholder for Heatmap */}
-        <div className="rounded-3xl border border-white/5 bg-white/5 p-8 backdrop-blur-xl">
-          <h2 className="text-xl font-bold flex items-center gap-3 mb-6">
-            <Calendar size={20} className="text-blue-400" />
+        <div className="rounded-3xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-white/5 shadow-sm dark:shadow-none p-8 backdrop-blur-xl">
+          <h2 className="text-xl font-bold flex items-center gap-3 mb-6 text-neutral-900 dark:text-white">
+            <Calendar size={20} className="text-blue-500 dark:text-blue-400" />
             Activity Heatmap
           </h2>
-          <div className="h-48 rounded-2xl bg-white/5 flex items-center justify-center border border-dashed border-white/10">
+          <div className="h-48 rounded-2xl bg-neutral-50 dark:bg-white/5 flex items-center justify-center border border-dashed border-neutral-300 dark:border-white/10">
              <p className="text-neutral-500 text-sm italic">Coming Soon...</p>
           </div>
         </div>
@@ -136,13 +136,13 @@ function StatCard({ title, value, icon, delay }: { title: string, value: string 
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay, duration: 0.5 }}
-      className="rounded-3xl border border-white/5 bg-white/5 p-6 backdrop-blur-xl"
+      className="rounded-3xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-white/5 p-6 shadow-sm dark:shadow-none backdrop-blur-xl"
     >
       <div className="flex items-center justify-between mb-4">
-        <span className="text-sm font-medium text-neutral-400">{title}</span>
+        <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{title}</span>
         {icon}
       </div>
-      <div className="text-3xl font-bold text-white">{value}</div>
+      <div className="text-3xl font-bold text-neutral-900 dark:text-white">{value}</div>
     </motion.div>
   );
 }
